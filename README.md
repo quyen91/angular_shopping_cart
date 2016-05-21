@@ -6,3 +6,5 @@ version 0.15.1.Angular
 ### We have configured gulpfile.js file to avoid error after using Yeoman Angular Generator
 #For learning web development
 
+### To generate controller, view...see
+https://github.com/yeoman/generator-angular

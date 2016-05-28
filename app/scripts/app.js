@@ -19,9 +19,14 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'ui.router'
+    'ui.router',
+    'auth0',
+    'angular-storage',
+    'angular-jwt',
+    'firebase'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, $locationProvider,
+  jwtInterceptorProvider) {
     // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/about");
   //

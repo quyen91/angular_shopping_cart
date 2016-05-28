@@ -12,11 +12,20 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "angular-material": "^1.0.7",
-    "angular-ui-router": "^0.3.0"
+    "angular-ui-router": "^0.3.0",
+    "angular-jwt": "^0.0.9",
+    "angular-storage": "^0.5.0",
+    "auth0-angular": "^4.1.0",
+    "firebase": "^3.0.3",
+    "angularfire": "^1.2.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "angularShopingCartApp"
+  "moduleName": "angularShopingCartApp",
+  "resolutions": {
+    "angular": "^1.4.8",
+    "firebase": "^3.0.3"
+  }
 }

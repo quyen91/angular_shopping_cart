@@ -18,26 +18,24 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/product', {
-        templateUrl: 'views/product.html',
-        controller: 'ProductCtrl',
-        controllerAs: 'product'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $urlRouterProvider) {
+    // For any unmatched url, redirect to /state1
+  $urlRouterProvider.otherwise("/about");
+  //
+  // Now set up the states
+  $stateProvider
+    .state('about', {
+      url: "/about",
+      templateUrl: "views/about.html",
+      controller: 'AboutCtr'
+    })
+    .state('product', {
+      url: "/product",
+      templateUrl: "views/product.html",
+      controller: 'ProductCtr'
+    });
+   
   });

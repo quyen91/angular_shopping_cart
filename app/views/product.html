@@ -1,1 +1,19 @@
-<p>This is the product view.</p>
+<li ng-click="clickme()">View all Object</li>
+<p>THis is boook {{ obj.books }}</p>
+<h1>sdsd</h1>
+
+<h1>Please upload a new book</h1>
+<form>
+  Title: <input type="text" ng-model="book.title"/> <br>
+  Author: <input type="text" ng-model="book.author"/><br>
+  Price: <input type="text" ng-model="book.price"/><br>
+  Test : <input type="text" ng-model='test'/>
+</form>
+
+<h1>THis is your product</h1>
+
+<pre> user = {{book | json}}</pre>
+
+<p>{{test}}</p>
+
+<a href="" ng-click="addnew()"> ADD BOOK</a>

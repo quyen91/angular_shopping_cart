@@ -30,6 +30,8 @@
               <li><a ui-sref="product">Product</a></li>
               <li><a ui-sref="admin">Admin</a></li>
               <li><a ui-sref="login">Login</a></li>
+              <li><a ui-sref="main">Main</a></li>
+
             </ul>
           </div>
         </div>
@@ -71,6 +73,13 @@
     <script src="/bower_components/angular-touch/angular-touch.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="/bower_components/auth0.js/build/auth0.js"></script>
+    <script src="/bower_components/auth0-lock/build/auth0-lock.js"></script>
+    <script src="/bower_components/auth0-angular/build/auth0-angular.js"></script>
+    <script src="/bower_components/firebase/firebase.js"></script>
+    <script src="/bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="/bower_components/a0-angular-storage/dist/angular-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -79,6 +88,19 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/product.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
+
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAPImLi9i3EuGCQIXR34xUQMyubgGhXADg",
+      authDomain: "todolist91.firebaseapp.com",
+      databaseURL: "https://todolist91.firebaseio.com",
+      storageBucket: "project-2747716274864215992.appspot.com",
+    };
+     firebase.initializeApp(config);
+  </script>
+
 </body>
 </html>

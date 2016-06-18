@@ -1,19 +1,39 @@
-<li ng-click="clickme()">View all Object</li>
-<p>THis is boook {{ obj.books }}</p>
-<h1>sdsd</h1>
 
+<h1>Action</h1>
+  <a href="" ng-click="resetBook()">Reset</a>
 <h1>Please upload a new book</h1>
+<div class="message" id='notify'>
+  <h1>{{message}}</h1>
+</div>
 <form>
   Title: <input type="text" ng-model="book.title"/> <br>
   Author: <input type="text" ng-model="book.author"/><br>
   Price: <input type="text" ng-model="book.price"/><br>
   Test : <input type="text" ng-model='test'/>
+  <a href="" ng-click="addbook()"> ADD NEW</a>
 </form>
 
+<h1>Please upload a new Category</h1>
+<form>
+  Name: <input type="text" ng-model="category.name"/>
+  <a href="" ng-click="addcategory()"> ADD NEW</a>
+</form>
+
+
+
 <h1>THis is your product</h1>
+
+  <div ng-repeat="(key,val) in author">
+    <p> {{ key }}</p>
+    <div ng-repeat="(k, v) in val">
+      {{ k }} : : {{v }}
+    </div>
+  </div>
+  
+  
+
 
 <pre> user = {{book | json}}</pre>
 
 <p>{{test}}</p>
 
-<a href="" ng-click="addnew()"> ADD BOOK</a>

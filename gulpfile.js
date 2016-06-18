@@ -2,12 +2,16 @@
 'use strict';
 
 var gulp = require('gulp');
+var ngAnnotate = require('gulp-ng-annotate');
 var $ = require('gulp-load-plugins')();
 var openURL = require('open');
 var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var concat = require('gulp-concat');
+var order = require("gulp-order");
+var mainBowerFiles = require('main-bower-files');
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -19,12 +23,15 @@ var paths = {
   styles: [yeoman.app + '/styles/**/*.css'],
   test: ['test/spec/**/*.js'],
   testRequire: [
-    yeoman.app + '/bower_components/angular/angular.js',
-    yeoman.app + '/bower_components/angular-mocks/angular-mocks.js',
-    yeoman.app + '/bower_components/angular-resource/angular-resource.js',
-    yeoman.app + '/bower_components/angular-cookies/angular-cookies.js',
-    yeoman.app + '/bower_components/angular-sanitize/angular-sanitize.js',
-    yeoman.app + '/bower_components/angular-route/angular-route.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-mocks/angular-mocks.js',
+    'bower_components/angular-resource/angular-resource.js',
+    'bower_components/angular-cookies/angular-cookies.js',
+    'bower_components/angular-sanitize/angular-sanitize.js',
+    'bower_components/angular-route/angular-route.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/a0-angular-storage/dist/angular-storage.js',
+    'bower_components/firebase/firebase.js',
     'test/mock/**/*.js',
     'test/spec/**/*.js'
   ],
@@ -166,7 +173,9 @@ gulp.task('client:build', ['html', 'styles'], function () {
     .pipe($.useref({searchPath: [yeoman.app, '.tmp']}))
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
-    .pipe($.uglify())
+    .pipe($.uglify({
+      mangle: false
+    }))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
     .pipe($.minifyCss({cache: true}))

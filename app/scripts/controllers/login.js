@@ -8,7 +8,7 @@
  * Controller of the angularShopingCartApp
  */
 angular.module('angularShopingCartApp')
-  .controller('LoginCtrl', function ($scope, auth) {
+  .controller('LoginCtrl', ['$scope', 'auth', function ($scope, auth) {
      $scope.auth = auth;
   
 
@@ -31,4 +31,4 @@ angular.module('angularShopingCartApp')
   // }
 
 
-});
+}]);

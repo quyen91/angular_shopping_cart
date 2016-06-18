@@ -8,7 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+   
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,9 +22,7 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="collapse">
+     
             <ul class="nav navbar-nav">
               <li class="active"><a ui-sref="about">About</a></li>
               <li><a ui-sref="product">Product</a></li>
@@ -33,11 +31,8 @@
               <li><a ui-sref="main">Main</a></li>
 
             </ul>
-          </div>
-        </div>
-      </div>
     </div>
-
+  
     <div class="container">
     <div ui-view=""></div>
     </div>
@@ -62,24 +57,23 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-aria/angular-aria.js"></script>
-    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="/bower_components/angular-messages/angular-messages.js"></script>
-    <script src="/bower_components/angular-resource/angular-resource.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
-    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/bower_components/angular-touch/angular-touch.js"></script>
-    <script src="/bower_components/angular-material/angular-material.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/angular-jwt/dist/angular-jwt.js"></script>
-    <script src="/bower_components/auth0.js/build/auth0.js"></script>
-    <script src="/bower_components/auth0-lock/build/auth0-lock.js"></script>
-    <script src="/bower_components/auth0-angular/build/auth0-angular.js"></script>
-    <script src="/bower_components/firebase/firebase.js"></script>
-    <script src="/bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="/bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+    <script src="bower_components/angular.min.js"></script>
+    <script src="bower_components/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria.min.js"></script>
+    <script src="bower_components/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-messages.min.js"></script>
+    <script src="bower_components/angular-resource.min.js"></script>
+    <script src="bower_components/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-touch.min.js"></script>
+    <script src="bower_components/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-jwt.min.js"></script>
+    <script src="bower_components/auth0.min.js"></script>
+    <script src="bower_components/auth0-lock.min.js"></script>
+    <script src="bower_components/auth0-angular.min.js"></script>
+    <script src="bower_components/firebase.js"></script>
+    <script src="bower_components/angularfire.min.js"></script>
+    <script src="bower_components/angular-storage.min.js"></script>
+    <script src="bower_components/ng-admin.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -99,7 +93,7 @@
       databaseURL: "https://todolist91.firebaseio.com",
       storageBucket: "project-2747716274864215992.appspot.com",
     };
-     firebase.initializeApp(config);
+    firebase.initializeApp(config);
   </script>
 
 </body>

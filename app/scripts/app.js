@@ -17,15 +17,16 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial',
-    'ui.router',
     'auth0',
     'angular-storage',
     'angular-jwt',
-    'firebase'
+    'ui.router'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, $locationProvider,
+  .config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider', '$locationProvider',
+  'jwtInterceptorProvider', function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, $locationProvider,
   jwtInterceptorProvider) {
+
+
     // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/error");
   //
@@ -95,8 +96,8 @@ angular
 
 
    
-})
-.run(function($rootScope, $state, auth, jwtHelper, $location, store) {
+}])
+.run(['$rootScope', '$state', 'auth', 'jwtHelper', '$location', 'store' ,function($rootScope, $state, auth, jwtHelper, $location, store) {
  
 
     $rootScope.$on('$locationChangeStart', function() {
@@ -117,4 +118,4 @@ angular
     }
   });
 
-});
+}]);

@@ -17,7 +17,9 @@
     "firebase": "^3.0.3",
     "angularfire": "^1.2.0",
     "a0-angular-storage": "^0.0.15",
-    "ng-admin": "^0.9.1"
+    "ng-admin": "^0.9.1",
+    "metisMenu": "https://github.com/onokumus/metisMenu.git#^2.5.2",
+    "font-awesome": "^4.6.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

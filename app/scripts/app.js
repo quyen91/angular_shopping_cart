@@ -27,17 +27,29 @@ angular
   jwtInterceptorProvider) {
 
 
-    // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/error");
-  //
-  // Now set up the states
+  $urlRouterProvider.otherwise("/site");
+  // -----------------------------------------------
+  // ------------- PRODUCT ROUTER -----------------
   $stateProvider
+  .state('public', {
+    abstract: true,
+    template: "<ui-view/>"
+  })
+  .state('public.site', {
+    url: '/site',
+    // controller: 'SiteCtrl',
+    templateUrl: 'views/products/_site.html'
+  })
+  .state('public.site.home', {
+    url: '/',
+    templateUrl: 'products/home.html'
+  })
   .state('main', {
       url: "/main",
       templateUrl: "views/main.html",
       controller: 'MainCtrl'
     })
-    .state('about', {
+  .state('about', {
       url: "/about",
       templateUrl: "views/about.html",
       controller: 'AboutCtrl',
@@ -45,11 +57,11 @@ angular
         requiresLogin: true
       }
     })
-    .state('product', {
-      url: "/product",
-      templateUrl: "views/product.html",
-      controller: 'ProductCtrl'
-    })
+    // .state('product', {
+    //   url: "/product",
+    //   templateUrl: "views/product.html",
+    //   controller: 'ProductCtrl'
+    // })
     .state('login', {
       url: "/login",
       templateUrl: "views/login.html",
@@ -60,7 +72,20 @@ angular
       templateUrl: "404.html"
     });
 
-
+    // --------------------------------------------------
+    // ------------------- ADMIN ROUTER -----------------
+    $stateProvider
+    .state('private', {
+      abstract: true,
+      template: "<ui-view/>"
+    })
+    .state('private.admin', {
+      url: '/admin',
+      templateUrl: 'views/admin/home.html'
+    });
+    
+    // -------------------------------------------------
+    
     authProvider.init({
         domain: 'top3.auth0.com',
         clientID: 'jJZRo0j53V0ULwoI6KSRnYP6aV0ghqc2',
@@ -86,13 +111,9 @@ angular
 
   });
   authProvider.on('logout', function($location) {
-      $location.path('/login');
+      $location.path('/site');
 
   });
-
-  
-
-      
 
 
    
@@ -114,7 +135,7 @@ angular
     }
     else {
       // Otherwise, redirect to the home route
-      $location.path('/about');
+      $location.path('/public.site');
     }
   });
 

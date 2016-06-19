@@ -41,14 +41,21 @@ angular
     templateUrl: 'views/products/_site.html'
   })
   .state('public.site.home', {
-    url: '/',
-    templateUrl: 'products/home.html'
+    url: '/home',
+    templateUrl: 'views/products/_home.html'
   })
-  .state('main', {
-      url: "/main",
-      templateUrl: "views/main.html",
-      controller: 'MainCtrl'
-    })
+  .state('public.site.product', {
+    url: '/product',
+    templateUrl: 'views/products/_product.html'
+  })
+  .state('public.site.product.list', {
+    url: '/list',
+    templateUrl: 'views/products/_list_product.html'
+  })
+   .state('public.site.product.details', {
+    url: '/details',
+    templateUrl: 'views/products/_product_details.html'
+  })
   .state('about', {
       url: "/about",
       templateUrl: "views/about.html",
@@ -82,6 +89,7 @@ angular
     .state('private.admin', {
       url: '/admin',
       templateUrl: 'views/admin/home.html'
+      
     });
     
     // -------------------------------------------------
@@ -135,7 +143,7 @@ angular
     }
     else {
       // Otherwise, redirect to the home route
-      $location.path('/public.site');
+      $location.path('/site');
     }
   });
 

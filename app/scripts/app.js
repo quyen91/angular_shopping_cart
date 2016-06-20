@@ -84,7 +84,10 @@ angular
     $stateProvider
     .state('private', {
       abstract: true,
-      template: "<ui-view/>"
+      template: "<ui-view/>",
+      data: {
+        requiresLogin: true
+      }
     })
     .state('private.admin', {
       url: '/admin',

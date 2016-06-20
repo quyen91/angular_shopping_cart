@@ -103,11 +103,13 @@ angular
     })
     .state('private.admin.product.new', {
       url: '/new',
-      templateUrl: 'views/admin/products/_new.html'
+      templateUrl: 'views/admin/products/_new.html',
+      controller: 'AdminProductListCtrl'
     })
     .state('private.admin.product.list', {
       url: '/list',
-      templateUrl: 'views/admin/products/_list.html'
+      templateUrl: 'views/admin/products/_list.html',
+      controller: 'AdminProductListCtrl'
     })
      .state('private.admin.product.show', {
       url: '/show',

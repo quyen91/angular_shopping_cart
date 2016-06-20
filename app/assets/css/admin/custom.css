@@ -3,3 +3,7 @@
     border: solid 1px !important;
     border-color: #e7e7e7 !important;
  }
+img.small-product-image{
+	width: 50px;
+	height: auto;
+}

@@ -8,7 +8,7 @@
  * Controller of the angularShopingCartApp
  */
 angular.module('angularShopingCartApp')
-  .controller('AdminProductListCtrl', function ($scope, auth, store, $http) {
+  .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state) {
 
   	  var ref1 = firebase.database().ref('books');
 
@@ -35,11 +35,13 @@ angular.module('angularShopingCartApp')
 
 
       $scope.addbook = function(e){
+        
         var ref = firebase.database().ref();
         // get key
         var newBookKey = firebase.database().ref().child('books').push().key;
         var updates ={};
         $scope.book.user_id = store.get('profile').user_id;
+        $scope.book.images = $scope.photo['base64'];
         updates['/books/' + newBookKey] = $scope.book;
         ref.update(updates);
 
@@ -47,7 +49,8 @@ angular.module('angularShopingCartApp')
           alert("Not save");
         }
         else{
-          
+        	  alert('add new successfully');
+            $state.go('private.admin.product.list');	 
         }
 
       }

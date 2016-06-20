@@ -27,7 +27,7 @@
         <tr ng-repeat="(key,val) in listbook">
           <td>1 </td>
           <td>{{ val['title'] }} </td>
-          <td>Image</td>
+          <td><img data-ng-src="data:image/png;base64,{{val['images']}}" class="small-product-image"></td>
           <td>{{ val['author'] }}  </td>
           <td>Chuyen cuoi</td>
           <td>{{ val['price'] }}   </td>

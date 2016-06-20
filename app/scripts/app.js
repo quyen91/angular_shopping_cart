@@ -20,7 +20,8 @@ angular
     'auth0',
     'angular-storage',
     'angular-jwt',
-    'ui.router'
+    'ui.router',
+    'naif.base64'
   ])
   .config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider', '$locationProvider',
   'jwtInterceptorProvider', function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, $locationProvider,

@@ -120,6 +120,8 @@
     <script src="bower_components/firebase.js"></script>
     <script src="bower_components/angularfire.min.js"></script>
     <script src="bower_components/angular-storage.min.js"></script>
+    <script src="bower_components/angular-base64-upload.min.js"></script>
+    
     <!-- <script src="bower_components/ng-admin.min.js"></script> -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -137,6 +139,8 @@
         <script src="scripts/controllers/product.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/admin/admin.js"></script>
+        <script src="scripts/controllers/admin/productlist.js"></script>
+        <script src="scripts/controllers/admin/product.list.js"></script>
         <!-- endbuild -->
 
 
@@ -149,7 +153,10 @@
       databaseURL: "https://todolist91.firebaseio.com",
       storageBucket: "project-2747716274864215992.appspot.com",
     };
-    firebase.initializeApp(config);
+      firebase.initializeApp(config);
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    var storage = firebase.storage();
+    
   </script>
 
 </body>

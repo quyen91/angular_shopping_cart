@@ -91,9 +91,29 @@ angular
     })
     .state('private.admin', {
       url: '/admin',
-      templateUrl: 'views/admin/home.html'
-      
+      templateUrl: 'views/admin/_site.html' 
+    })
+    .state('private.admin.dashboard', {
+      url: '/dashboard',
+      templateUrl: 'views/admin/_home.html' 
+    })
+    .state('private.admin.product', {
+      url: '/product',
+      templateUrl: 'views/admin/products/_layout.html'
+    })
+    .state('private.admin.product.new', {
+      url: '/new',
+      templateUrl: 'views/admin/products/_new.html'
+    })
+    .state('private.admin.product.list', {
+      url: '/list',
+      templateUrl: 'views/admin/products/_list.html'
+    })
+     .state('private.admin.product.show', {
+      url: '/show',
+      templateUrl: 'views/admin/products/_show.html'
     });
+
     
     // -------------------------------------------------
     

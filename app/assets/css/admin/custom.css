@@ -1,9 +1,16 @@
 .navbar-default {
-    background-color: #f8f8f8;
-    border: solid 1px !important;
-    border-color: #e7e7e7 !important;
+  background-color: #f8f8f8;
+  border: solid 1px !important;
+  border-color: #e7e7e7 !important;
  }
 img.small-product-image{
-	width: 50px;
-	height: auto;
+  width: 50px;
+  height: auto;
+}
+img.details-product-image{
+  width: 300px;
+  height: auto;
+}
+textarea.form-control{
+  resize: vertical;
 }

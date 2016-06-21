@@ -113,8 +113,9 @@ angular
       controller: 'AdminProductListCtrl'
     })
      .state('private.admin.product.show', {
-      url: '/show',
-      templateUrl: 'views/admin/products/_show.html'
+      url: '/show/:id',
+      templateUrl: 'views/admin/products/_show.html',
+      controller: 'AdminProductShowCtrl'
     });
 
     

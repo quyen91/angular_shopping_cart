@@ -11,12 +11,13 @@ angular.module('angularShopingCartApp')
   .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state) {
 
   	  var ref1 = firebase.database().ref('books');
-
+      
 
       $scope.book = {};
       $scope.category = {};
       $scope.test = 'sdsd';
       $scope.listbook = {};
+
 
       ref1.on('value', function(snapshot){
         // alert(angular.toJson(snapshot.val()));

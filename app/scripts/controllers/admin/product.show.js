@@ -19,7 +19,4 @@ angular.module('angularShopingCartApp')
 
     });
 
-    console.log($scope.book_details);
-    alert( $scope.book_details);
-
   });

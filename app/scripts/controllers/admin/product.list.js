@@ -8,7 +8,7 @@
  * Controller of the angularShopingCartApp
  */
 angular.module('angularShopingCartApp')
-  .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state) {
+  .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state, $stateParams) {
 
   	  var ref1 = firebase.database().ref('books');
       
@@ -55,6 +55,15 @@ angular.module('angularShopingCartApp')
         }
 
       }
+
+      $scope.deletebook = function(e){
+        var bookid = $(e.target).data('id');
+        var refDelete = firebase.database().ref('books/' + bookid);
+        if(confirm('Are you sure to delete?')){
+           refDelete.remove();
+        }
+      }
+
       $scope.addcategory = function(){
         var categoryRef = firebase.database().ref('categories').set({
           cate1: {

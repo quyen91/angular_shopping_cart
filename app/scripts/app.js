@@ -134,7 +134,14 @@ angular
           store.set('profile', profile);
           store.set('token', idToken);
         });
-        $location.path('/about');
+
+       console.log(store.get('profile').app_metadata);
+       if(store.get('profile').app_metadata.admin === true){
+        $location.path('/admin');
+      }
+         
+      
+        
   });
 
   authProvider.on('loginFailure', function() {
@@ -179,7 +186,7 @@ angular
     $rootScope.$on('$stateChangeStart', function(e, to) {
       if (to.data && to.data.requiresLogin && ( !store.get('profile').app_metadata || store.get('profile').app_metadata.admin !== true)){
          e.preventDefault();
-         alert('not admin');
+         alert('You are not admin');
           $state.go('login');
       }
     });

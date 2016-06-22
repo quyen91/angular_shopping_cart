@@ -116,6 +116,11 @@ angular
       url: '/show/:id',
       templateUrl: 'views/admin/products/_show.html',
       controller: 'AdminProductShowCtrl'
+    })
+     .state('private.admin.product.edit', {
+      url: '/edit/:id',
+      templateUrl: 'views/admin/products/_edit.html',
+      controller: 'AdminProductEditCtrl'
     });
 
     

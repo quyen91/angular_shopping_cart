@@ -10,6 +10,7 @@
 angular.module('angularShopingCartApp')
   .controller('AdminProductShowCtrl', function ($scope, auth, store, $http, $state, $stateParams) {
     var ref1 = firebase.database().ref('books/' + $stateParams.id);
+    $scope.bookid = $stateParams.id;
     $scope.book_details = {};
 
     ref1.on('value', function(snapshot){

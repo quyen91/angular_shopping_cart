@@ -174,4 +174,14 @@ angular
     }
   });
 
+
+    // Check if is admin when access admin board
+    $rootScope.$on('$stateChangeStart', function(e, to) {
+      if (to.data && to.data.requiresLogin && ( !store.get('profile').app_metadata || store.get('profile').app_metadata.admin !== true)){
+         e.preventDefault();
+         alert('not admin');
+          $state.go('login');
+      }
+    });
+
 }]);

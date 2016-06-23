@@ -59,6 +59,13 @@ angular
     templateUrl: 'views/products/_product_details.html',
     controller: 'ProductShowCtrl'
   })
+  // .state('public.site.addtocart', {
+  //   url: '/cart/:id',
+  //   // templateUrl: 'views/products/_checkout.html', 
+  //   controller: 'CartCtrl'
+    
+  // })
+
   .state('about', {
       url: "/about",
       templateUrl: "views/about.html",

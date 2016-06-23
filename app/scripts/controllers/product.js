@@ -8,7 +8,7 @@
  * Controller of the angularShopingCartApp
  */
 angular.module('angularShopingCartApp')
-  .controller('ProductCtrl', function ($scope, auth, store, $http) {
+  .controller('ProductCtrl', function ($scope, auth, store, $http, addtoCart) {
 
 
       var ref1 = firebase.database().ref('books');
@@ -52,6 +52,12 @@ angular.module('angularShopingCartApp')
         }
 
       }
+
+      $scope.addtocart = function(e){
+       var bookid = $(e.target).data('id');
+        addtoCart.addtocart(bookid);
+      }
+
       $scope.addcategory = function(){
         var categoryRef = firebase.database().ref('categories').set({
           cate1: {

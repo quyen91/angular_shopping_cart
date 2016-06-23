@@ -12,7 +12,7 @@ angular.module('angularShopingCartApp')
 
   	  var ref1 = firebase.database().ref('books');
       
-
+// sssss
       $scope.book = {};
       $scope.category = {};
       $scope.test = 'sdsd';

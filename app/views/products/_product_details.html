@@ -4,13 +4,13 @@
           <div class="flexslider">
             <ul class="slides">
               <li data-thumb="assets/images/si.jpg">
-                <div class="thumb-image"> <img src="assets/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                <div class="thumb-image"> <img data-ng-src="data:image/png;base64,{{ book_details['images']}}" data-imagezoom="true" class="img-responsive"> </div>
               </li>
               <li data-thumb="assets/images/si1.jpg">
-                 <div class="thumb-image"> <img src="assets/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                 <div class="thumb-image"> <img data-ng-src="data:image/png;base64,{{ book_details['images']}}" data-imagezoom="true" class="img-responsive"> </div>
               </li>
               <li data-thumb="assets/images/si2.jpg">
-                 <div class="thumb-image"> <img src="assets/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                 <div class="thumb-image"> <img data-ng-src="data:image/png;base64,{{ book_details['images']}}" data-imagezoom="true" class="img-responsive"> </div>
               </li> 
             </ul>
           </div>
@@ -30,8 +30,8 @@
           <!-- flixslider -->
         </div>
         <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-          <h3>Men's Solid Casual Shirt</h3>
-          <h4><span class="item_price">$550</span> - $900</h4>
+          <h3>{{ book_details['title'] }} </h3>
+          <h4><span class="item_price">$550</span> - {{ book_details['price'] }} </h4>
           <div class="rating1">
             <span class="starRating">
               <input id="rating5" type="radio" name="rating" value="5">

@@ -57,7 +57,7 @@ angular
    .state('public.site.product.show', {
     url: '/show/:id',
     templateUrl: 'views/products/_product_details.html',
-    controller: 'ProductCtrl'
+    controller: 'ProductShowCtrl'
   })
   .state('about', {
       url: "/about",

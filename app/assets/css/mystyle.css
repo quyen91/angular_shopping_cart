@@ -1,9 +1,1 @@
-.message{
-	display: block;
-	height: 100px;
-	background: red;
-	color: white;
-}
-.hidden{
-	display: none;
-}
+.products-right-grids-bottom-grid:nth-child(3n+1) {clear: left;}

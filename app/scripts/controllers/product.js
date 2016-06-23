@@ -17,11 +17,11 @@ angular.module('angularShopingCartApp')
       $scope.book = {};
       $scope.category = {};
       $scope.test = 'sdsd';
-      $scope.author = {};
+      $scope.listbook = {};
 
       ref1.on('value', function(snapshot){
         // alert(angular.toJson(snapshot.val()));
-        $scope.author = snapshot.val();
+        $scope.listbook = snapshot.val();
         $scope.$apply();
 
       });

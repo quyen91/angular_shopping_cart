@@ -51,11 +51,13 @@ angular
   })
   .state('public.site.product.list', {
     url: '/list',
-    templateUrl: 'views/products/_list_product.html'
+    templateUrl: 'views/products/_list_product.html',
+    controller: 'ProductCtrl'
   })
-   .state('public.site.product.details', {
-    url: '/details',
-    templateUrl: 'views/products/_product_details.html'
+   .state('public.site.product.show', {
+    url: '/show/:id',
+    templateUrl: 'views/products/_product_details.html',
+    controller: 'ProductCtrl'
   })
   .state('about', {
       url: "/about",

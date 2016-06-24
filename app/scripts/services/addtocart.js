@@ -51,14 +51,28 @@ angular.module('angularShopingCartApp')
         console.log(newCartKey);
 
         var updates ={};
-        book1.id = bookid;
-        book1.title = 'erer';
-        book1.price = '123';
+        book1.addcart = true;
+        
 
         updates['/carts/' + newCartKey + '/' + bookid] = book1;
         ref.update(updates);
         alert('add successfully');
     }
+     this.removeCartItem = function(e){
+      var bookid = $(e.target).data('id');
+      var key = store.get('userCartKey');
+      var refDel = firebase.database().ref().child('carts/' + key + '/' + bookid);
+      refDel.remove();
+      
+     }
+     this.removeCartAll = function(){
+        var key = store.get('userCartKey');
+        var refDel = firebase.database().ref().child('carts/' + key);
+        if(confirm('Are you sure to delete?')){
+            refDel.remove();
+        }
+       
+     }
 
 
   });

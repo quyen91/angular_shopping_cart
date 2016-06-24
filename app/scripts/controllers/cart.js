@@ -18,7 +18,9 @@
 
  */
 angular.module('angularShopingCartApp')
-  .controller('CartCtrl', function ($scope, auth, store, $http, $state, $stateParams,  $filter) {
+  .controller('CartCtrl', function ($scope, auth, store, $http, $state, $stateParams,  $filter, addtoCart) {
+    $scope.service = addtoCart;
+
     // identify this is your cart
    var newCartKey = store.get('userCartKey');
    $scope.listID = {};
@@ -60,29 +62,6 @@ angular.module('angularShopingCartApp')
    });
 
 
-
-   // var ref1 = firebase.database().ref('books');
-  
-   // ref1.on('value', function(snapshot){
-
-   //    cartList = store.get('cartList');
-   //    // alert(angular.toJson(snapshot.val()));
-   //    for(var i=0; i<cartList.length; i++){
-   //       firebase.database().ref('books/' + cartList[i]).on('value', function(snapshot){
-           
-   //          $scope.book = snapshot.val();          
-   //          $scope.arrayCart.push($scope.book);
-   //          // $scope.arrayCart[i] = $scope.book;
-   //          $scope.$apply();
-
-        
-           
-   //       });
-         
-   //    }
-
-   // });
-      
 
 
 

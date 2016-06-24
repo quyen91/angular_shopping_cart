@@ -38,7 +38,7 @@ angular
   })
   .state('public.site', {
     url: '/site',
-    // controller: 'SiteCtrl',
+    controller: 'SiteCtrl',
     templateUrl: 'views/products/_site.html'
   })
   .state('public.site.home', {

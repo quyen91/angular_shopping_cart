@@ -47,79 +47,20 @@
             <td class="invert">{{item.price}}</td>
             <td class="invert">
               <div class="rem">
-                <div class="close1"> </div>
+               <div data-id="{{item.bookid}}" ng-click='service.removeCartItem($event)' class="close1"> </div>
+                
               </div>
-              <script>$(document).ready(function(c) {
+             <!--  <script>$(document).ready(function(c) {
                 $('.close1').on('click', function(c){
                   $('.rem1').fadeOut('slow', function(c){
                     $('.rem1').remove();
                   });
                   });   
                 });
-               </script>
+               </script> -->
             </td>
           </tr>
 
-
-
-          <!-- <tr class="rem2">
-            <td class="invert">2</td>
-            <td class="invert-image"><a href="single.html"><img src="asset/images/30.jpg" alt=" " class="img-responsive" /></a></td>
-            <td class="invert">
-               <div class="quantity"> 
-                <div class="quantity-select">                           
-                  <div class="entry value-minus">&nbsp;</div>
-                  <div class="entry value"><span>1</span></div>
-                  <div class="entry value-plus active">&nbsp;</div>
-                </div>
-              </div>
-            </td>
-            <td class="invert">Centre Table</td>
-            <td class="invert">$5.00</td>
-            <td class="invert">$250.00</td>
-            <td class="invert">
-              <div class="rem">
-                <div class="close2"> </div>
-              </div>
-              <script>$(document).ready(function(c) {
-                $('.close2').on('click', function(c){
-                  $('.rem2').fadeOut('slow', function(c){
-                    $('.rem2').remove();
-                  });
-                  });   
-                });
-               </script>
-            </td>
-          </tr>
-          <tr class="rem3">
-            <td class="invert">3</td>
-            <td class="invert-image"><a href="single.html"><img src="asset/images/11.jpg" alt=" " class="img-responsive" /></a></td>
-            <td class="invert">
-               <div class="quantity"> 
-                <div class="quantity-select">                           
-                  <div class="entry value-minus">&nbsp;</div>
-                  <div class="entry value"><span>1</span></div>
-                  <div class="entry value-plus active">&nbsp;</div>
-                </div>
-              </div>
-            </td>
-            <td class="invert">Stone Bangles</td>
-            <td class="invert">$5.00</td>
-            <td class="invert">$299.00</td>
-            <td class="invert">
-              <div class="rem">
-                <div class="close3"> </div>
-              </div>
-              <script>$(document).ready(function(c) {
-                $('.close3').on('click', function(c){
-                  $('.rem3').fadeOut('slow', function(c){
-                    $('.rem3').remove();
-                  });
-                  });   
-                });
-               </script>
-            </td>
-          </tr> -->
                 <!--quantity-->
                   <script>
                   $('.value-plus').on('click', function(){

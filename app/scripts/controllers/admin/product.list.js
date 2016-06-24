@@ -10,7 +10,15 @@
 angular.module('angularShopingCartApp')
   .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state, $stateParams) {
 
-  	  var ref1 = firebase.database().ref('books');
+       // GET REALTIME CATEGORIES
+    $scope.catelist = {};
+    var refCate = firebase.database().ref('categories');
+    refCate.on('value', function(snapshot){
+      $scope.catelist = snapshot.val();
+      $scope.$apply();
+    });
+  	  
+      var ref1 = firebase.database().ref('books');
       
 
       $scope.book = {};
@@ -45,6 +53,12 @@ angular.module('angularShopingCartApp')
         $scope.book.images = $scope.photo['base64'];
         updates['/books/' + newBookKey] = $scope.book;
         ref.update(updates);
+        // update categories
+        var cateSet = {};
+        var updateCategory = {};
+        cateSet.have = true;
+        updateCategory['/categories/' + $scope.book.category + '/books/'+ newBookKey] = cateSet;
+        ref.update(updateCategory);
 
         if(e) {
           alert("Not save");
@@ -74,5 +88,7 @@ angular.module('angularShopingCartApp')
           }
         });
       }
+  
+
    
   });

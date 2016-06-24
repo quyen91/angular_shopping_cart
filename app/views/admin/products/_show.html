@@ -26,7 +26,7 @@
         </tr>
         <tr>
           <th>Category</th>
-          <td>Chuyen cuoi</td>
+          <td>{{ book_details['category'] }}</td>
         </tr>
         <tr>
           <th>Price </th>
@@ -34,7 +34,7 @@
         </tr>
         <tr>
           <th>Status </th>
-          <td>Active </td>
+          <td>{{ book_details['status'] }} </td>
         </tr>
         <tr>
           <th>Created_at   </th>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
           <th>Action</th>
-          <td><a href="" ui-sref="private.admin.product.edit({id: bookid})">Edit</a> ,  <a href=""> Delete</a></td>
+          <td><a href="" ui-sref="private.admin.product.edit({id: bookid})">Edit</a></td>
         </tr>     
       </tbody>
     </table>

@@ -60,6 +60,11 @@ angular
     templateUrl: 'views/products/_product_details.html',
     controller: 'ProductShowCtrl'
   })
+   .state('public.site.product.category', {
+    url: '/category/:id',
+    templateUrl: 'views/products/_product.html',
+    controller: 'ProductCtrl'
+  })
   .state('public.site.cart', {
     url: '/cart',
     templateUrl: 'views/products/_checkout.html', 
@@ -141,7 +146,6 @@ angular
       templateUrl: 'views/admin/categories/_list.html',
       controller: 'AdminCategoryCtrl'
     });
-
 
 
 

@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Category List</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+  <!-- /.row -->
+  
+<div class="row">
+  <div class="col-lg-4">
+     <div class="table-responsive"> 
+     <table class="table table-bordered table-hover">
+      <thead> 
+        <tr> 
+        <th># </th>
+        <th>Name </th>
+        <th>Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key,val) in listcate">
+          <td>1 </td>
+          <td> <a href="">{{ val['title'] }} </a></td>
+          <td><a href="" data-id="{{key}}"  ng-click="delete($event)"> Delete</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div> 
+   <!-- /.table-responsive -->
+  </div>
+
+    <div class="col-lg-4">
+    <h4>Add new categories</h4>
+    <form role="form">
+      <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" ng-model="cate.title">
+          <p class="help-block">Example block-level help text here.</p>
+      </div>
+     <button ng-click="addnew()" class="btn btn-default" >Submit Button</button>
+    </form>
+  </div>
+</div>

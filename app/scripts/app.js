@@ -47,7 +47,8 @@ angular
   })
   .state('public.site.product', {
     url: '/product',
-    templateUrl: 'views/products/_product.html'
+    templateUrl: 'views/products/_product.html',
+    controller: 'ProductCtrl'
   })
   .state('public.site.product.list', {
     url: '/list',
@@ -130,7 +131,19 @@ angular
       url: '/edit/:id',
       templateUrl: 'views/admin/products/_edit.html',
       controller: 'AdminProductEditCtrl'
+    })
+     .state('private.admin.category', {
+      url: '/category',
+      templateUrl: 'views/admin/products/_layout.html'
+    })
+     .state('private.admin.category.list', {
+      url: '/list',
+      templateUrl: 'views/admin/categories/_list.html',
+      controller: 'AdminCategoryCtrl'
     });
+
+
+
 
     
     // -------------------------------------------------

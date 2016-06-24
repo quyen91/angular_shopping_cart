@@ -80,10 +80,8 @@
         <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
           <h4>Continue to basket</h4>
           <ul>
-            <li>Product1 <i>-</i> <span>$250.00 </span></li>
-            <li>Product2 <i>-</i> <span>$290.00 </span></li>
-            <li>Product3 <i>-</i> <span>$299.00 </span></li>
-            <li>Total Service Charges <i>-</i> <span>$15.00</span></li>
+             <li ng-repeat='item in arrayCart'>{{item.title}} <i>-</i> <span>{{item.price}}</span></li>
+            <li>Total Service Charges <i></i> <span>$15.00</span></li>
             <li>Total <i>-</i> <span>$854.00</span></li>
           </ul>
         </div>

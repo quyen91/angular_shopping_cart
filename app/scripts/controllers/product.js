@@ -25,9 +25,7 @@ angular.module('angularShopingCartApp')
         $scope.$apply();
 
       });
-      // ref1.on('child_changed', function(snapshot){
-      //   alert('realtime');
-      // });
+      
 
       $scope.resetBook = function(){
          var ref2 = firebase.database().ref('books');
@@ -58,48 +56,13 @@ angular.module('angularShopingCartApp')
         addtoCart.addtocart(bookid);
       }
 
-      $scope.addcategory = function(){
-        var categoryRef = firebase.database().ref('categories').set({
-          cate1: {
-            name: "Comic 2"
-          },
-          cate2: {
-            name: 'TextBook 2'
-          }
-        });
-      }
-      
-      // $scope.addnew = function(){
-      //   var usersRef = ref.child("books");
-      //   usersRef.update({
-      //     a: {
-      //       date_of_birth: "June 23, 1912",
-      //       full_name: "Alan Turing"
-      //     },
-      //     test2: {
-      //       date_of_birth: "December 9, 1906",
-      //       full_name: "Change"
-      //     }
-      //   });
-      // };
-      // $scope.addbook = function(){
-      //   var usersRef = ref.child("books");
-      //   usersRef.set({
-      //     a: {
-      //       name: "June 23, 1912",
-      //       author: "Alan Turing",
-      //       category: {
-      //         vanhoc: true
-      //       }
-      //     },
-      //     b: {
-      //       name: "December 9, 1906",
-      //       author: "Change",
-      //       category: {
-      //         toan: true
-      //       }
-      //     }
-      //   });
-      // };
+     
+    // GET REALTIME CATEGORIES
+    $scope.catelist = {};
+    var refCate = firebase.database().ref('categories');
+    refCate.on('value', function(snapshot){
+      $scope.catelist = snapshot.val();
+      $scope.$apply();
+    });
       
   });

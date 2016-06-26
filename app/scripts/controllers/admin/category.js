@@ -29,7 +29,31 @@ angular.module('angularShopingCartApp')
     $scope.delete = function(e){
       var cateID = $(e.target).data('id');
       var refDelete = firebase.database().ref('categories/' + cateID);
+
+      // FIND ALL BOOK IN CATEGORY AND REMOVE CATEGORY FIELD
+      refDelete.child('books').on('value', function(snapshot){
+        $scope.bookInCate = snapshot.val();
+        angular.forEach($scope.bookInCate, function(value, key) {
+          // key is book_id
+          alert(key);
+          var refUpdate = firebase.database().ref();
+          firebase.database().ref('books/' + key).on('value', function(snapshot){
+            var updates = {};
+            $scope. booktoUpdate = snapshot.val();
+            $scope.booktoUpdate.category = null;
+            updates['/books/' + key] = $scope.booktoUpdate;
+            refUpdate.update(updates);
+            $scope.$apply();
+          });
+          
+        });
+        $scope.$apply();
+      });
+
       refDelete.remove();
+      store.remove('tempCartTitle');
+      
+     
     }
 
   });

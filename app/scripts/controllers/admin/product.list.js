@@ -8,7 +8,7 @@
  * Controller of the angularShopingCartApp
  */
 angular.module('angularShopingCartApp')
-  .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state, $stateParams) {
+  .controller('AdminProductListCtrl', function ($scope, auth, store, $http, $state, $stateParams, common) {
 
        // GET REALTIME CATEGORIES
     $scope.catelist = {};

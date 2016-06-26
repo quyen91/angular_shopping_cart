@@ -29,7 +29,7 @@
           <td> <a ui-sref="private.admin.product.show({ id: key })">{{ val['title'] }} </a></td>
           <td><img data-ng-src="data:image/png;base64,{{val['images']}}" class="small-product-image"></td>
           <td>{{ val['author'] }}  </td>
-          <td>{{val['category']}}</td>
+          <td>{{val['category'] | cateName}}</td>
           <td>{{ val['price'] }}   </td>
           <td>{{val['status']}}</td>
           <td>12:45 23/4 </td>

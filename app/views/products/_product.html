@@ -41,7 +41,7 @@
         <div class="categories animated wow slideInUp" data-wow-delay=".5s">
           <h3>Categories</h3>
           <ul class="cate">
-            <li ng-repeat="(key, val) in catelist"><a href="" ui-sref="public.site.product.category({id : key})" >{{val['title']}}</a> <span>({{ key | cateCount}})</span></li>
+            <li ng-repeat="(key, val) in catelist"><a href="" ui-sref="public.site.product.category({id : key})" >{{val['title']}}</a> <span> ({{val['count'] || 0}})</span></li>
           </ul>
         </div>
         <div class="new-products animated wow slideInUp" data-wow-delay=".5s">

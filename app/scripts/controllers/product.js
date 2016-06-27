@@ -15,6 +15,18 @@ angular.module('angularShopingCartApp')
     var refCate = firebase.database().ref('categories');
     refCate.on('value', function(snapshot){
       $scope.catelist = snapshot.val();
+
+      angular.forEach($scope.catelist, function(value,key){
+        // key is id CATEGORY 
+        $scope.bookInCate = {};
+        var refBookInCate = firebase.database().ref('categories/' + key + '/books');
+        refBookInCate.on('value', function(snapshot){
+          $scope.bookInCate = snapshot.val();
+          $scope.count = Object.keys($scope.bookInCate).length;
+          $scope.catelist[key].count = $scope.count;
+          $scope.$apply();
+        });
+      });
       $scope.$apply();
     });
 
@@ -34,6 +46,8 @@ angular.module('angularShopingCartApp')
     ref1.on('value', function(snapshot){
       // alert(angular.toJson(snapshot.val()));
       $scope.newproduct = snapshot.val();
+      // $scope.count = Object.keys($scope.newproduct).length;
+      // alert($scope.count)
       $scope.$apply();
     });
      

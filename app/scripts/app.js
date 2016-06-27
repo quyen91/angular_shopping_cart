@@ -21,7 +21,8 @@ angular
     'angular-storage',
     'angular-jwt',
     'ui.router',
-    'naif.base64'
+    'naif.base64',
+    'ui.bootstrap'
   ])
   .config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider', '$locationProvider',
   'jwtInterceptorProvider', function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, $locationProvider,
@@ -53,7 +54,7 @@ angular
   .state('public.site.product.list', {
     url: '/list',
     templateUrl: 'views/products/_list_product.html',
-    controller: 'ProductCtrl'
+    controller: 'ProductListCtrl'
   })
    .state('public.site.product.show', {
     url: '/show/:id',
@@ -62,8 +63,8 @@ angular
   })
    .state('public.site.product.category', {
     url: '/category/:id',
-    templateUrl: 'views/products/_product.html',
-    controller: 'ProductCtrl'
+    templateUrl: 'views/products/_list_product.html',
+    controller: 'ProductByCateCtrl'
   })
   .state('public.site.cart', {
     url: '/cart',

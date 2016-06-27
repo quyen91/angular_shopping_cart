@@ -18,5 +18,20 @@ angular.module('angularShopingCartApp')
         store.set('tempCateTitle', title);
       });
     }
+    this.setCateCount = function(key){
+    	var ref = firebase.database().ref('categories/' + key + '/books');
+        ref.on('value', function(snapshot){
+	        var listbook = {};
+	        listbook = snapshot.val();
+	        console.log(listbook);
+	        var count = 0;
+	        angular.forEach(listbook, function(value,key){
+	          count++;
+	          listbook.count = count;
+            });
+        
+
+      });
+    }
 
 });

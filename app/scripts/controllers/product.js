@@ -50,6 +50,6 @@ angular.module('angularShopingCartApp')
       // alert($scope.count)
       $scope.$apply();
     });
-     
+    
     
   });

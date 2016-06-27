@@ -61,17 +61,5 @@ angular.module('angularShopingCartApp')
 
    });
 
-
-
-
-
-       // $scope.book = snapshot.val();
-       // $scope.arrayCart.push($scope.book);
-       // $scope.$apply();
-       // alert(angular.toJson($scope.book));     
-
-
-   
-
     
   });

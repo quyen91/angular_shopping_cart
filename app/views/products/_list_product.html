@@ -20,7 +20,7 @@
             <div class="clearfix"> </div>
           </div>
           <div class="products-right-grids-position animated wow slideInRight" data-wow-delay=".5s">
-            <img src="assets/images/18.jpg" alt=" " class="img-responsive" />
+            <img src="asset/images/18.jpg" alt=" " class="img-responsive" />
             <div class="products-right-grids-position1">
               <h4>2016 New Collection</h4>
               <p>Temporibus autem quibusdam et aut officiis debitis aut rerum 
@@ -29,9 +29,11 @@
             </div>
           </div>
         </div>
+         <uib-pagination total-items="totalItem" ng-model="currentPage" num-pages="4" items-per-page="itemsPerPage" ></uib-pagination>
+           <p>
         <div class="products-right-grids-bottom" >
 
-            <div class="col-md-4 products-right-grids-bottom-grid" ng-repeat="(key,val) in listbook">
+            <div class="col-md-4 products-right-grids-bottom-grid" ng-repeat="(key,val) in listbook | paginate: (currentPage -1)*itemsPerPage "  ng-if ="$index < itemsPerPage">
             <!-- add wow class to get animate load page when scroll -->
             <div class="new-collections-grid1 products-right-grid1 animated slideInUp" data-wow-delay=".5s">
               <div class="new-collections-grid1-image">
@@ -90,7 +92,12 @@
             </a>
           </li>
           </ul> -->
-         <!--  <uib-pagination total-items="100" ng-model="2" num-pages="4" items-per-page="18"></uib-pagination> -->
+          <uib-pagination total-items="totalItem" ng-model="currentPage" num-pages="4" items-per-page="itemsPerPage"></uib-pagination>
+           <p>
+         Total items: {{totalItem}}<br />
+         Items per page: {{itemsPerPage}}<br />
+         Current Page: {{currentPage}}
+      </p>
         </nav>
       </div>
 

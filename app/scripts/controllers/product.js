@@ -10,6 +10,11 @@
 angular.module('angularShopingCartApp')
   .controller('ProductCtrl', function ($scope, auth, store, $http, addtoCart) {
 
+         // PAGINATE
+  $scope.itemsPerPage = 6
+  $scope.currentPage = 1;
+
+
     // GET REALTIME CATEGORIES
     $scope.catelist = {};
     var refCate = firebase.database().ref('categories');
